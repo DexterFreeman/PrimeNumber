@@ -18,8 +18,14 @@ public class Main {
                 break;
             default:
                 try{
-                    int userInputToInteger = Integer.parseInt(userInput);
-                    System.out.println(Math.isPrime(userInputToInteger));
+                    if (userInput.length() >= 10){
+                        BigInteger strToBigInt = new BigInteger(userInput);
+                        System.out.println(Math.isPrime(strToBigInt));
+                    }
+                    else {
+                        int userInputToInteger = Integer.parseInt(userInput);
+                        System.out.println(Math.isPrime(userInputToInteger));
+                    }
                 }
                 catch (Exception e){
                     System.out.println("Error; input was not valid, make sure the input is either a number or quit");
